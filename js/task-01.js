@@ -1,21 +1,18 @@
+const categoriesEl = document.querySelector('#categories');
+calculateNumberOfCategories(categoriesEl);
+
 function calculateNumberOfCategories(categories) {
   return console.log(`Number of categories: ${categories.children.length}`);
 }
 
-const categoriesListEl = document.querySelector('#categories');
-calculateNumberOfCategories(categoriesListEl);
+/* _______________________________________________ */
 
-function logNumberOfItemsInCategory(categoriesItems) {
-  categoriesItems.forEach(item => {
-    const categoryTitle = item.firstElementChild;
-    const categoryItemList = categoryTitle.nextElementSibling;
+const categoriesItems = document.querySelectorAll('#categories .item');
 
-    console.log(
-      `Category: ${categoryTitle.textContent} 
-Elements: ${categoryItemList.children.length}`,
-    );
-  });
-}
+categoriesItems.forEach(item => {
+  const categoryTitle = item.firstElementChild;
+  const categoryItemList = categoryTitle.nextElementSibling;
 
-const categoriesItemsEl = document.querySelectorAll('#categories .item');
-logNumberOfItemsInCategory(categoriesItemsEl);
+  console.log(`Category: ${categoryTitle.textContent}
+Elements: ${categoryItemList.children.length}`);
+});
